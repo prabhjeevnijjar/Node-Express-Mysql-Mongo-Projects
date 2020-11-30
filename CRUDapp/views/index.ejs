@@ -1,0 +1,31 @@
+<%- include('../views/partials/header'); -%>
+  
+  <div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Interest</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(ele => { %>
+        <tr>
+       <td><%= ele.id %></td>
+       <td><%= ele.name %></td>
+       <td><%= ele.email %></td>
+       <td><%= ele.interest %></td>
+       <td><%= ele.image %></td>
+       <td><a href ="/edit/<%= ele.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-info">Edit</a>
+       <td><a href="/delete/<%= ele.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-danger">Delete</a></td>
+       </tr> 
+       <% }) %>
+    </tbody>
+  </table>
+  </div>
+
+<%- include('../views/partials/footer'); -%>
